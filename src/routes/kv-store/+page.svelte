@@ -7,7 +7,7 @@
     let isLoading = false;
     let error = '';
 
-    const API_BASE_URL = 'https://api.apickle.cloud/kv';
+    const API_BASE_URL = 'https://kv.p.sulu.sh/v1/kv-store';
 
     async function fetchAllKeys() {
         if (!apiKey) {
