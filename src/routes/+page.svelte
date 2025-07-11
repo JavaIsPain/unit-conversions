@@ -108,10 +108,10 @@
     });
 </script>
 
-<div class="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
-    <div class="mb-6">
-        <select 
-            class="w-full p-3 text-center bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500" 
+<div class="max-w-lg mx-auto my-10 p-8 bg-slate-50 rounded-xl shadow-2xl space-y-8">
+    <div>
+        <select
+            class="w-full p-4 text-center bg-slate-100 border-slate-300 text-slate-900 text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-150 ease-in-out hover:bg-slate-200"
             bind:value={selectedCategory}
             on:change={handleCategoryChange}
         >
@@ -120,17 +120,17 @@
             {/each}
         </select>
     </div>
-    <div class="space-y-4">
-        <div class="flex items-center space-x-4">
-            <input 
-                type="number" 
-                bind:value={fromValue} 
-                class="flex-1 p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" 
-                step="any" 
-                placeholder="-15.325234"
+    <div class="space-y-6">
+        <div class="flex items-center space-x-3">
+            <input
+                type="number"
+                bind:value={fromValue}
+                class="flex-1 p-4 bg-slate-100 border-slate-300 text-slate-900 text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-150 ease-in-out hover:bg-slate-200 placeholder-slate-400 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                step="any"
+                placeholder="Enter value"
             >
-            <select 
-                class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500"
+            <select
+                class="p-4 bg-slate-100 border-slate-300 text-slate-900 text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-150 ease-in-out hover:bg-slate-200"
                 value={fromUnit}
                 on:change={(e) => handleUnitChange(e, true)}
             >
@@ -144,25 +144,26 @@
             </select>
         </div>
         <div class="flex justify-center">
-            <button 
-                class="p-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-colors duration-200"
+            <button
+                class="p-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75 transition-all duration-150 ease-in-out transform hover:scale-105"
                 on:click={switchValues}
+                aria-label="Switch units"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
-                </svg>                  
+                </svg>
             </button>
         </div>
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-3">
             <input
                 type="text"
-                class="flex-1 p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                placeholder={isLoading ? "Converting..." : "Le Result"}
+                class="flex-1 p-4 bg-slate-100 border-slate-300 text-slate-900 text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-150 ease-in-out hover:bg-slate-200 placeholder-slate-400 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                placeholder={isLoading ? "Converting..." : "Result"}
                 value={isLoading ? "" : result}
                 readonly
             >
             <select
-                class="p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                class="p-4 bg-slate-100 border-slate-300 text-slate-900 text-base rounded-lg focus:ring-indigo-500 focus:border-indigo-500 transition-colors duration-150 ease-in-out hover:bg-slate-200"
                 value={toUnit}
                 on:change={(e) => handleUnitChange(e, false)}
             >
